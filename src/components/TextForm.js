@@ -54,7 +54,7 @@ export default function TextForm(props) {
     <>
     <form>
       <h5 className='my-2'>{props.heading}</h5>
-      <textarea value={text} placeholder='Enter your text here!' className="form-control" onChange={handelonchange} id="exampleFormControlTextarea1" rows="7"></textarea>
+      <textarea value={text} placeholder='Enter your text here!' className={`form-control ${props.mode==='dark'?'dark-mode':'light-mode'}`} style={{backgroundColor: props.mode==='dark'?'#292c35':'white' , color:props.mode==='dark'?'white':'#292c35'}} onChange={handelonchange}  rows="7"></textarea>
       <button type="button" className="btn btn-primary my-3" onClick={handelUC}>Convert to UpperCase</button>
       <button type="button" className="btn btn-primary my-3 mx-3" onClick={handelLC}>Convert to LowerCase</button>
       <button type="button" className="btn btn-primary my-3 " onClick={removeSpace}>Remove Extra Space</button>
@@ -64,7 +64,7 @@ export default function TextForm(props) {
 
     <div className="container">
       <h5>Your text summary</h5>
-      <p>{text.split(" ").length} words {text.length} characters</p>
+      <p>{text.trim().split(/\s+/).length} words {text.length-(text.split(" ").length - 1)} characters</p>
     </div>
 
     </>

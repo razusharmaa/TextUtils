@@ -5,40 +5,9 @@ import PropTypes from 'prop-types'
 
 export default function Navbar(props) {
 
-  const [themeNav, setThemeNav] = React.useState('light')
-  const [themetxt, setThemetxt] = React.useState('Enable Dark Mode')
-  const [themeBtn, setThemeBtn] = React.useState('btn btn-light  btn-outline-primary d-flex mx-2')
-
-
-  const [theme, setTheme] = React.useState({
-    color: 'black',
-    backgroundColor: 'white'
-  })
-
-  const themeControl = () => {
-    if (themeNav === 'light') {
-      setTheme({
-        color: 'white',
-        backgroundColor: 'black'
-      })
-      setThemeNav('dark')
-      setThemetxt('Enable Light Mode')
-      setThemeBtn('btn btn-dark  btn-outline-primary d-flex mx-2')
-    }
-    else {
-      setTheme({
-        color: 'black',
-        backgroundColor: 'white'
-      })
-      setThemeNav('light')
-      setThemetxt('Enable Dark Mode')
-      setThemeBtn('btn btn-light  btn-outline-primary d-flex mx-2')
-    }
-  }
-
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary " data-bs-theme={themeNav}>
+      <nav className="navbar navbar-expand-lg bg-body-tertiary " data-bs-theme={props.mode}>
         <div className="container-fluid">
           <a className="navbar-brand" href="/">{props.title}</a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="/navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,8 +23,8 @@ export default function Navbar(props) {
               </li>
             </ul>
 
-            <div id='toggle_animation'>
-              <input type="checkbox" class="checkbox" id="checkbox"/>
+            <div>
+              <input type="checkbox" class="checkbox" id="checkbox" onClick={props.toggleMode}/>
                 <label for="checkbox" class="checkbox-label">
                   <i class="fa-solid fa-moon"></i>
                   <i class="fas fa-sun"></i>
@@ -64,10 +33,9 @@ export default function Navbar(props) {
             </div>
 
 
-            <button type="button" onClick={themeControl} className={themeBtn}>{themetxt}</button>
             <form className="d-flex" role="search">
 
-              <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input>
+              <input className="form-control me-2" type="search" placeholder="Type Here" aria-label="Search"></input>
 
               <button className="btn btn-outline-success" type="submit">Search</button>
             </form>
