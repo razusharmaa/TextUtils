@@ -98,3 +98,58 @@ body {
 .dark-mode::placeholder {
   color: white; /* Dark mode color */
 }
+
+.fixbtn{
+ width: 200px;
+  height:40px;
+  margin-right:150px;
+}
+
+.home-right{
+  display: inline;
+}
+.home-right ul{
+  list-style: none;
+}
+.home-right ul li{
+  margin-bottom: 20px;
+}
+
+.logo-follow{
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 25px;
+  border: 2px solid #ffffff;
+  padding: 7px;
+  border-radius: 12px;
+  transition: all 0.3s;
+}
+.scale-yel:hover{
+  border: 2px solid #FACA22;
+  transform: scale(1.1);
+  color: #FACA22;
+}
+.one-line{
+  display: flex;
+  align-items: center;
+justify-content: space-between;
+}
+.one-line p span{
+  color: #f39c12;
+}
+
+
+.l-mode{
+  color: rgb(31, 124, 230) ;
+  border: 2px solid rgb(31, 124, 230);
+}
+
+.bby-name{
+  color: aqua;
+}
+.bby-name span{
+  color: rgba(255, 0, 0, 0.87);
+}
+.bby-m{
+  color: rgb(226, 62, 62);
+}

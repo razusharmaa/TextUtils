@@ -4,6 +4,8 @@ import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import React, { useState } from 'react';
 import Alert from './components/Alert';
+import Secret from './components/Secret';
+import Bby from './components/Bby';
 
 
 
@@ -38,6 +40,20 @@ function App() {
     }, 2000)
   }
 
+  const [initialCode, setCode] = useState(null)
+  const checkCode = (food) => {
+    if (food === 'poo') {
+      showAlert("You Guessed Right","success")
+      setTimeout(() =>{
+    setCode('poo')},2000)
+    }
+    else{
+      showAlert("You Guessed Wrong","danger")
+      setCode(null)
+    }
+   
+  }
+
 
   return (
     <>
@@ -46,7 +62,9 @@ function App() {
       <Alert alertMain={runAlert} />
 
       <div className="container">
-       <TextForm heading="Enter the text to analyze" mode={mode} alert1={showAlert} />
+       {!initialCode &&  <TextForm heading="Enter the text to analyze" mode={mode} alert1={showAlert} code={checkCode} /> }
+  {!initialCode  &&    <Secret mode={mode} code={initialCode} runMain={checkCode} alert1={showAlert}/>  }
+       <Bby mode={mode} code={initialCode}/>
         </div>
       
     </>
