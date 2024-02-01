@@ -9,6 +9,14 @@ export default function Navbar(props) {
       <nav className="navbar navbar-expand-lg bg-body-tertiary " data-bs-theme={props.mode}>
         <div className="container-fluid">
           <a className="navbar-brand" href="#">{props.title}</a>
+          <div className='d-flex'>
+              <input type="checkbox" className="checkbox" id="checkbox" onClick={props.toggleMode}/>
+                <label htmlFor="checkbox" className="checkbox-label">
+                  <i className="fa-solid fa-moon"></i>
+                  <i className="fas fa-sun"></i>
+                  <span className="ball"></span>
+                </label>
+            </div>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="/navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -22,14 +30,14 @@ export default function Navbar(props) {
               </li>
             </ul>
 
-            <div>
+            {/* <div>
               <input type="checkbox" className="checkbox" id="checkbox" onClick={props.toggleMode}/>
                 <label htmlFor="checkbox" className="checkbox-label">
                   <i className="fa-solid fa-moon"></i>
                   <i className="fas fa-sun"></i>
                   <span className="ball"></span>
                 </label>
-            </div>
+            </div> */}
 
 
             <form className="d-flex" role="search">
