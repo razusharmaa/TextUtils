@@ -20,6 +20,22 @@ export default function TextForm(props) {
     let newText = text.toLowerCase();
     setText(newText);
   }
+
+
+  // const Paste = () => {
+  //   // console.log("Paste button was clicked");
+  //   navigator.clipboard.readText()
+  //  .then(text => {
+  //       // console.log(text);
+  //       let newText = text;
+  //       setText(newText);
+  //     })
+  //  .catch(err => {
+  //       console.log(err);
+  //     });
+  // }
+
+
   const clearText = () => {
     let newText = "";
     setText(newText);
@@ -33,12 +49,17 @@ export default function TextForm(props) {
 
   const copyTxt = () => {
     navigator.clipboard.writeText(text);
-    setCopy("Copied");
-    setBTN_color("btn btn-warning my-3 mx-3 ")
-    setTimeout(()=>{
-      setCopy("Copy All");
-      setBTN_color("btn btn-primary my-3 mx-3")
-    },3000)
+
+
+      // <-----New alert added for clipboard------->
+    // setCopy("Copied");
+    // setBTN_color("btn btn-warning my-3 mx-3 ")
+    // setTimeout(()=>{
+    //   setCopy("Copy All");
+    //   setBTN_color("btn btn-primary my-3 mx-3")
+    // },3000)
+
+    props.alert1('Copied to clipboard','success')
   }
 
   const removeSpace = () => {
@@ -57,9 +78,10 @@ export default function TextForm(props) {
       <textarea value={text} placeholder='Enter your text here!' className={`form-control ${props.mode==='dark'?'dark-mode':'light-mode'}`} style={{backgroundColor: props.mode==='dark'?'#292c35':'white' , color:props.mode==='dark'?'white':'#292c35'}} onChange={handelonchange}  rows="7"></textarea>
       <button type="button" className="btn btn-primary my-3" onClick={handelUC}>Convert to UpperCase</button>
       <button type="button" className="btn btn-primary my-3 mx-3" onClick={handelLC}>Convert to LowerCase</button>
+      {/* <button type="button" className="btn btn-primary my-3 mx-3" onClick={Paste}>Paste</button> */}
       <button type="button" className="btn btn-primary my-3 " onClick={removeSpace}>Remove Extra Space</button>
-      <button type="button" className={clicked_copy} onClick={copyTxt}>{bcopy}</button>
-      <button type="button" className="btn btn-danger my-3  " onClick={clearText}>Clear Text</button>
+      <button type="button" className={clicked_copy}  onClick={copyTxt}>{bcopy}</button>
+      <button type="button" className="btn btn-danger my-3  " onClick={clearText}>Clear All</button>
     </form>
 
     <div className="container">
