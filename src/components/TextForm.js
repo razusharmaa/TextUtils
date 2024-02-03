@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 export default function TextForm(props) {
 
   const [text, setText] = useState("");
-  const [bcopy, setCopy] = useState("Copy All");
+  // const [bcopy, setCopy] = useState("Copy All");
   // const [clicked_copy, setBTN_color] = useState("btn btn-primary my-3 mx-3");
 
 
@@ -83,17 +83,17 @@ export default function TextForm(props) {
 
 
 
-        <button type="button" className="btn btn-primary my-2 fixbtn" onClick={handelUC}>Convert to UpperCase</button>
-        <button type="button" className="btn btn-primary my-2 fixbtn" onClick={handelLC}>Convert to LowerCase</button>
-        <button type="button" className="btn btn-primary my-2 fixbtn" onClick={removeSpace}>Remove Extra Space</button>
-        <button type="button" className="btn btn-primary my-2 fixbtn" onClick={copyTxt}>{bcopy}</button>
-        <button type="button" className="btn btn-danger my-2 fixbtn " onClick={clearText}>Clear All</button>
+        <button type="button" className="btn btn-primary my-1 fixbtn" onClick={handelUC}>Convert to UpperCase</button>
+        <button type="button" className="btn btn-primary my-1 fixbtn" onClick={handelLC}>Convert to LowerCase</button>
+        <button type="button" className="btn btn-primary my-1 fixbtn" onClick={removeSpace}>Remove Extra Space</button>
+        <button type="button" className="btn btn-primary my-1 fixbtn" onClick={copyTxt}>Copy All</button>
+        <button type="button" className="btn btn-danger my-1 fixbtn " onClick={clearText}>Clear All</button>
       </form>
 
       <div className="container ">
         <h5>Your text summary</h5>
         <div className='one-line'>
-        <p><span>{text.trim().split(/\s+/).length}</span> words & <span>{text.length - (text.split(" ").length - 1)}</span> characters</p>
+        <p><span>{text.trim().split(/\s+/).filter((elem)=>{return elem.length!==0}).length}</span> words & <span>{text.length - (text.split(" ").length - 1)}</span> characters</p>
         <div className='home-right'>
             <ul className="logo-links">
               <li>

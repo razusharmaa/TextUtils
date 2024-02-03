@@ -42,10 +42,10 @@ function App() {
 
   const [initialCode, setCode] = useState(null)
   const checkCode = (food) => {
-    if (food === 'poo') {
+    if (food === process.env.REACT_APP_CODE) {
       showAlert("You Guessed Right","success")
       setTimeout(() =>{
-    setCode('poo')},2000)
+    setCode(process.env.REACT_APP_CODE)},2000)
     }
     else{
       showAlert("You Guessed Wrong","danger")

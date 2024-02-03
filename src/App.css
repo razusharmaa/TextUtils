@@ -93,10 +93,12 @@ body {
 /* placeholder txt color------------> */
 .light-mode::placeholder {
   color: #292c35; /* Light mode color */
+  opacity: 0.6;
 }
 
 .dark-mode::placeholder {
   color: white; /* Dark mode color */
+  opacity: 0.6;
 }
 
 .fixbtn{

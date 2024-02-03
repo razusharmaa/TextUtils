@@ -6,7 +6,7 @@ function Secret(props) {
     const [text, setTextc] = useState("");
 
     const handleClose = () =>{
-      if(text!=='poo'){
+      if(text!==process.env.REACT_APP_CODE){
         setTextc('');
       }
       setShow(false);
@@ -19,14 +19,13 @@ function Secret(props) {
     }
 
     const handleSaveChanges = () => {
-        props.runMain(text);
+        props.runMain(text.toLowerCase());
         handleClose();
-       
     };
 
     return (
         <>
-            <Button variant="warning border-primary" onClick={handleShow}>
+            <Button variant="warning border-primary" style={{marginBottom:"10px"}} onClick={handleShow}>
                 Secret Button
             </Button>
 
@@ -36,7 +35,7 @@ function Secret(props) {
                 </Modal.Header>
                 <Modal.Body className='text-bg-secondary '>
                     <div className={`input-group `}>
-                        <input value={text} type="text" aria-label="First name" onChange={handelonchange} className="form-control" />
+                        <input value={text} type="password" aria-label="First name" onChange={handelonchange} className="form-control" />
                     </div>
                 </Modal.Body>
                 <Modal.Footer className='text-bg-dark '>
