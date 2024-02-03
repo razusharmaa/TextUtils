@@ -16,14 +16,14 @@ function App() {
   const toggleMode = () => {
     if (mode === 'light') {
       setMode('dark')
-      document.body.style.backgroundColor = '#292c35'
+      document.body.style.backgroundColor = 'black'
       document.body.style.color = 'white'
       document.title = 'TextUtils-Dark'
     }
     else {
       setMode('light')
       document.body.style.backgroundColor = 'white'
-      document.body.style.color = '#292c35'
+      document.body.style.color = 'black'
       document.title = 'TextUtils-Light'
     }
   }
