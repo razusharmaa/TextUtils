@@ -23,6 +23,47 @@ function Bby(props) {
 </div>
 
 
+<div className='flex-column'>
+
+
+<div className="rose1">
+	<div className="glass"></div>
+	<div className="thorns">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+	<div className="glow"></div>
+	<div className="rose-leaves">
+		<div></div>
+		<div></div>
+	</div>
+	<div className="rose-petals">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+	<div className="sparkles">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+</div>
+<div className={`glow my-5 ${props.mode==='light'?'text-danger':'text-white'}`}>Happy Rose Day my bby </div>
+</div>
+
     </>
   )
 }
