@@ -6,6 +6,7 @@ import React, { useState } from 'react';
 import Alert from './components/Alert';
 import Secret from './components/Secret';
 import Bby from './components/Bby';
+import Footer from './components/Footer';
 
 
 
@@ -61,11 +62,12 @@ function App() {
       <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
       <Alert alertMain={runAlert} />
 
-      <div className="container">
+      <div className="container" style={{minHeight:"100vh"}}>
        {!initialCode &&  <TextForm heading="Enter the text to analyze" mode={mode} alert1={showAlert} code={checkCode} /> }
   {!initialCode  &&    <Secret mode={mode} code={initialCode} runMain={checkCode} alert1={showAlert}/>  }
        <Bby mode={mode} code={initialCode}/>
         </div>
+        <Footer mode={mode}/>
       
     </>
   );

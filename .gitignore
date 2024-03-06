@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 /.env
+/components/img/chua.png
+/components/Secret.js
+/components/Bby.js
 
 # testing
 /coverage

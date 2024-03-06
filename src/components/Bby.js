@@ -6,7 +6,7 @@ function Bby(props) {
   const [index, setIndex] = useState(0);
   const text = `My Sweet <3,
 
-On this Promise Day, I want to assure you that I will never leave your side. I promise to stand by you through thick and thin, in joy and sorrow. I am committed to making our dreams come true, and one of those dreams is to marry you, the love of my life.
+I love you so much my chua, I want to assure you that I will never leave your side. I promise to stand by you through thick and thin, in joy and sorrow. I am committed to making our dreams come true, and one of those dreams is to marry you, the love of my life.
 
 I promise to be there for you, to wipe away your tears, and to fill your life with laughter and happiness. I will strive every day to bring a smile to your face and warmth to your heart.
 
@@ -44,7 +44,7 @@ Remember, I love you, today and always.`;
       }
 { props.code &&
       <div className='flex-column'>
-        <div className={`glow my-5 ${props.mode === 'light' ? 'text-danger' : 'text-white'}`}>Happy Promise Day! ❤️ </div>
+        <div className={`glow my-5 ${props.mode === 'light' ? 'text-danger' : 'text-white'}`}>My Bby ❤️ </div>
         <pre className='container' style={{ whiteSpace: "pre-wrap", wordWrap: "break-word" }}>{content}</pre>
       </div>
 }

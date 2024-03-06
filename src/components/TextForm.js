@@ -78,7 +78,7 @@ export default function TextForm(props) {
         <h5 className='my-2'>{props.heading}
 
         </h5>
-        <textarea value={text} placeholder="Error 404! ------->Don’t worry, it’s not a bug. Essentially, this is my app, so I can write whatever I want. Hehe" className={`form-control ${props.mode === 'dark' ? 'dark-mode' : 'light-mode'}`} style={{ backgroundColor: props.mode === 'dark' ? 'black' : 'white', color: props.mode === 'dark' ? 'white' : 'black' }} onChange={handelonchange} rows="7"></textarea>
+        <textarea value={text} placeholder="Error 404! ------->Don’t worry, it’s not a bug. Essentially, this is my app, so I can write whatever I want. Hehe" className={`my-2 form-control ${props.mode === 'dark' ? 'dark-mode' : 'light-mode'}`} style={{ backgroundColor: props.mode === 'dark' ? 'black' : 'white', color: props.mode === 'dark' ? 'white' : 'black' }} onChange={handelonchange} rows="7"></textarea>
 
 
 
