@@ -5,9 +5,9 @@
 /.pnp
 .pnp.js
 /.env
-/bby/components/img/chua.png
-/bby/components/Secret.js
-/bby/components/Bby.js
+/src/components/img/chua.png
+/src/components/Secret.js
+/src/components/Bby.js
 
 # testing
 /coverage
